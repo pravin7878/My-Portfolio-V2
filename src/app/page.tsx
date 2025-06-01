@@ -8,8 +8,8 @@ import { SkillSection } from "../components/SkillSection";
 // import {scrollIntoView} from "react"
 
 export default function Home() {
-  const heroRef = useRef(null)
-  const aboutRef = useRef(null)
+ const heroRef = useRef<HTMLElement | null>(null);
+const aboutRef = useRef<HTMLElement | null>(null);
   // const skillRef = useRef(null)
 
 
@@ -17,9 +17,16 @@ export default function Home() {
     <main className="flex flex-col min-h-screen bg-[#121212] container mx-auto px-4 md:px-10">
       <div className="fixed top-0 left-0 right-3 bg-[#121212] z-50">
         <Navbar
-          scrollToHero={() => heroRef?.current?.scrollIntoView({ behavior: 'smooth' })}
-          scrollToAbout={() => aboutRef?.current?.scrollIntoView({ behavior: 'smooth' })}
-          // scrollToSkills={() => skillRef.current.scrollIntoView({ behavior: 'smooth' })}
+          scrollToHero={() => {
+            if (heroRef.current) {
+              heroRef.current.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
+          scrollToAbout={() => {
+            if (aboutRef.current) {
+              aboutRef.current.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
         />
       </div>
 
@@ -41,7 +48,7 @@ My journey began with curiosity and turned into a commitment to creating clean, 
 
 I'm constantly exploring new technologies and improving my skills to deliver better products and experiences. Let's build something amazing together!"
         />
-        <SkillSection/>
+        <SkillSection />
       </div>
 
     </main>
