@@ -14,8 +14,8 @@ export default function HeroSection({ name, description, imgUrl }: { name: strin
         <section className="w-full" >
             <div className="flex flex-col items-center md:flex-row justify-between w-full">
                 <div className="w-full">
-                    <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 mb-4 text-3xl sm:text-5xl lg:text-6xl font-bold lg:font-extrabold">
-                        Hello,I'm
+                    <h1 className="text-transparent  mb-4 text-3xl sm:text-5xl lg:text-6xl font-bold lg:font-extrabold">
+                        <span className="bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">Hello,I'm</span>
                         <span className="text-white ml-0.5">
                             <br />
                             <TypeAnimation
