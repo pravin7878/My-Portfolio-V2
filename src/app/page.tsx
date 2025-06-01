@@ -8,8 +8,8 @@ import { SkillSection } from "../components/SkillSection";
 // import {scrollIntoView} from "react"
 
 export default function Home() {
- const heroRef = useRef<HTMLElement | null>(null);
-const aboutRef = useRef<HTMLElement | null>(null);
+//  const heroRef = useRef<HTMLElement | null>(null);
+// const aboutRef = useRef<HTMLElement | null>(null);
   // const skillRef = useRef(null)
 
 
@@ -17,20 +17,12 @@ const aboutRef = useRef<HTMLElement | null>(null);
     <main className="flex flex-col min-h-screen bg-[#121212] container mx-auto px-4 md:px-10">
       <div className="fixed top-0 left-0 right-3 bg-[#121212] z-50">
         <Navbar
-          scrollToHero={() => {
-            if (heroRef.current) {
-              heroRef.current.scrollIntoView({ behavior: 'smooth' });
-            }
-          }}
-          scrollToAbout={() => {
-            if (aboutRef.current) {
-              aboutRef.current.scrollIntoView({ behavior: 'smooth' });
-            }
-          }}
+          scrollToHero={()=>{}}
+          scrollToAbout={()=>{}}
         />
       </div>
 
-      <div ref={heroRef} className="pt-25 md:px-10">
+      <div  className="pt-25 md:px-10">
         <HeroSection
           // ref = {heroRef}
           name="pravin"
@@ -39,7 +31,7 @@ const aboutRef = useRef<HTMLElement | null>(null);
         />
       </div>
 
-      <div ref={aboutRef}>
+      <div >
         <About
           aboutImage="https://img.freepik.com/premium-vector/codding-vector-background_616507-167.jpg"
           aboutDescription="Hi, I'm Pravin, a passionate and detail-oriented Full-Stack Web Developer with a strong foundation in frontend and backend technologies. I specialize in building responsive, high-performance web applications using modern tools like React.js, Next.js, Tailwind CSS, and Node.js.
