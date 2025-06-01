@@ -12,14 +12,13 @@ export default function Home() {
   const aboutRef = useRef(null)
   // const skillRef = useRef(null)
 
-console.log(heroRef.current)
 
   return (
     <main className="flex flex-col min-h-screen bg-[#121212] container mx-auto px-4 md:px-10">
       <div className="fixed top-0 left-0 right-3 bg-[#121212] z-50">
         <Navbar
-          scrollToHero={() => heroRef.current.scrollIntoView({ behavior: 'smooth' })}
-          scrollToAbout={() => aboutRef.current.scrollIntoView({ behavior: 'smooth' })}
+          scrollToHero={() => heroRef?.current?.scrollIntoView({ behavior: 'smooth' })}
+          scrollToAbout={() => aboutRef?.current?.scrollIntoView({ behavior: 'smooth' })}
           // scrollToSkills={() => skillRef.current.scrollIntoView({ behavior: 'smooth' })}
         />
       </div>
