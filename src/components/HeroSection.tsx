@@ -3,17 +3,12 @@ import React from "react"
 import Image from "next/image"
 import { TypeAnimation } from 'react-type-animation';
 
-// const ExampleComponent = () => {
-//   return (
-
-//   );
-// };
 
 export default function HeroSection({ name, description, imgUrl }: { name: string, description: string, imgUrl: string }) {
     return (
         <section className="w-full" >
             <div className="flex flex-col items-center md:flex-row justify-between w-full">
-                <div className="w-full">
+                <div className="w-full flex flex-col items-center text-center md:items-baseline md:text-left">
                     <h1 className="text-transparent  mb-4 text-3xl sm:text-5xl lg:text-6xl font-bold lg:font-extrabold">
                         <span className="bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">Hello,I'm</span>
                         <span className="text-white ml-0.5">
@@ -39,7 +34,7 @@ export default function HeroSection({ name, description, imgUrl }: { name: strin
                     </h1>
                     <p className="text-[#ADB7BE] text-md lg:text-xl w-full md:w-3/4">{description}</p>
 
-                    <div className="my-5 flex flex-col gap-3 px-10 md:px-0 md:flex-row w-full">
+                    <div className="my-5 flex w-full flex-col gap-3 px-10 md:px-0 md:flex-row md:w-auto">
                         <button className="px-6 py-3 rounded-full text-white cursor-pointer hover:bg-slate-20 bg-gradient-to-r from-purple-500  to-pink-500 text-xl lg:text-2xl">Contact Me</button>
                         <button className="p-1 rounded-full bg-transparent hover:bg-slate-800 cursor-pointer text-white  bg-gradient-to-r from-purple-500  to-pink-500">
                             <span className="bg-slate-950 w-full block h-full px-5 py-2 rounded-full text-xl lg:text-2xl">Download CV</span>

@@ -10,7 +10,7 @@ export const About = ({
 }) => {
   return (
     <section className="bg-[#121212] py-10 px-4 md:px-10">
-      <div className="max-w-6xl mx-auto">
+      <div className="mx-auto">
         <h3 className="font-extrabold text-4xl md:text-5xl text-center mb-6 md:mb-12">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
             About
