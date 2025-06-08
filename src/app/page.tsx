@@ -5,6 +5,7 @@ import HeroSection from "../components/HeroSection";
 import Navbar from "../components/Nevbar";
 import { About } from "../components/AboutSection";
 import { SkillSection } from "../components/SkillSection";
+import ProjectSection from "../components/ProjectSection";
 // import {scrollIntoView} from "react"
 
 export default function Home() {
@@ -41,6 +42,7 @@ I'm constantly exploring new technologies and improving my skills to deliver bet
         />
       </div>
         <SkillSection />
+        <ProjectSection />
 
     </main>
   );

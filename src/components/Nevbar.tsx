@@ -49,9 +49,12 @@ const [isOpen, setIsOpen] = useState(false)
     isOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
   }`}
 >
-                {navItem.map((item, idx) => (<button onClick={()=>setIsOpen(false)}>
-                    <NavLink key={idx} label={item.label} action={item.action} />
-                </button>))}
+                {navItem.map((item, idx) => (
+                    <NavLink key={idx} label={item.label} action={()=>{
+                        item.action()
+                        setIsOpen(false)
+                    }} />
+               ))}
             </div>
         </nav>
     )
