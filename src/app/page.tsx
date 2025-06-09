@@ -6,6 +6,9 @@ import Navbar from "../components/Nevbar";
 import { About } from "../components/AboutSection";
 import { SkillSection } from "../components/SkillSection";
 import ProjectSection from "../components/ProjectSection";
+import ExperienceSection from "../components/ExperienceSection";
+import ContactSection from "../components/ContactSection";
+import Footer from "../components/Footer";
 // import {scrollIntoView} from "react"
 
 export default function Home() {
@@ -14,7 +17,7 @@ export default function Home() {
   // const skillRef = useRef(null)
 
 
-  return (
+  return ( <>
     <main className="w-full bg-[#121212] px-4 md:px-8">
       <div className="fixed top-0 right-0 left-0 bg-[#121212] z-50">
         <Navbar
@@ -43,7 +46,11 @@ I'm constantly exploring new technologies and improving my skills to deliver bet
       </div>
         <SkillSection />
         <ProjectSection />
+        <ExperienceSection />
+        <ContactSection />
 
     </main>
+        <Footer />
+       </>
   );
 }

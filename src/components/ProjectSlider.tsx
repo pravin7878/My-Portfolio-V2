@@ -36,7 +36,9 @@ interface ProjectSliderProps {
 const ProjectSlider: React.FC<ProjectSliderProps> = ({ projects }) => {
   return (
     <div className="md:hidden w-full">
-
+      {projects.length === 0 ? (
+        <div className="text-center text-gray-400">No projects found for the selected filters.</div>
+      ) : (
       <Swiper
         autoplay={{delay: 2000, disableOnInteraction: false}}
         effect={'coverflow'}
@@ -60,6 +62,7 @@ const ProjectSlider: React.FC<ProjectSliderProps> = ({ projects }) => {
           </SwiperSlide>
         ))}
       </Swiper>
+      )}
     </div>
   );
 };

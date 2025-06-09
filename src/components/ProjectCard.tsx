@@ -1,10 +1,19 @@
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import Image from 'next/image';
 
+export type Project = {
+  title: string;
+  description: string;
+  image: string;
+  github: string;
+  demo: string;
+  type: string;
+  techStack: string[];
+}
 
-export default function ProjectCard ({project,idx}:{project : {},idx:number}){
+export default function ProjectCard ({project,idx}:{project : Project,idx:number}){
     return (
-        <div className="min-w-0 bg-[#181818] rounded-2xl shadow-lg hover:shadow-pink-500/30 transition duration-300 flex flex-col overflow-hidden group mx-2">
+        <div className="min-w-0 bg-[#181818] rounded-2xl shadow-md hover:shadow-purple-400 transition duration-300 flex flex-col overflow-hidden group mx-2">
               <a href={project.demo} target="_blank" rel="noopener noreferrer" className="relative w-full h-48 block">
                 <Image
                   src={project.image}

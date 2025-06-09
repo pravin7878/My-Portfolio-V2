@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import Image from 'next/image';
 import ProjectSlider from './ProjectSlider';
+import ProjectCard from './ProjectCard';
 
 const projects = [
   {
@@ -112,63 +113,12 @@ const ProjectSection = () => {
         </div>
       </div>
       {/* Project Cards for Desktop/Tablet */}
-      <div className="grid gap-8 md:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 hidden md:grid">
+      <div className="gap-8 md:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 hidden md:grid">
         {filteredProjects.length === 0 ? (
           <div className="col-span-full text-center text-gray-400">No projects found for the selected filters.</div>
         ) : (
           filteredProjects.map((project, idx) => (
-            <div
-              key={idx}
-              className="bg-[#181818] rounded-2xl shadow-lg hover:shadow-pink-500/30 transition duration-300 flex flex-col overflow-hidden group"
-            >
-              <a href={project.demo} target="_blank" rel="noopener noreferrer" className="relative w-full h-48 md:h-56 block">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  priority={idx === 0}
-                />
-              </a>
-              <div className="p-5 flex flex-col flex-1">
-                <h4 className="text-xl md:text-2xl font-bold text-white mb-2">{project.title}</h4>
-                <div className="flex flex-wrap gap-2 mb-2">
-                  {project.techStack?.map((tech, i) => (
-                    <span key={i} className="bg-gradient-to-r from-purple-500 to-pink-500 text-xs text-white px-2 py-0.5 rounded-full">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <p className="text-gray-300 text-sm md:text-base flex-1">{project.description}</p>
-                <div className='flex justify-between items-center mt-4'>
-                  <div className="flex gap-4">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white hover:text-pink-500 transition"
-                      aria-label="GitHub Repository"
-                    >
-                      <FaGithub size={24} />
-                    </a>
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white hover:text-purple-500 transition"
-                      aria-label="Live Demo"
-                    >
-                      <FaExternalLinkAlt size={22} />
-                    </a>
-                  </div>
-                  {/* Project Type Badge */}
-                  <p className="px-3 py-0.5 rounded-full text-xs font-semibold bg-gradient-to-r from-purple-500 to-pink-500 text-white w-max">
-                    {project.type}
-                  </p>
-                </div>
-              </div>
-            </div>
+            <ProjectCard key={idx} project={project} idx={idx} />
           ))
         )}
       </div>
