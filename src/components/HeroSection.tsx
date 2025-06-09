@@ -4,7 +4,7 @@ import Image from "next/image"
 import { TypeAnimation } from 'react-type-animation';
 
 
-export default function HeroSection({ name, description, imgUrl }: { name: string, description: string, imgUrl: string }) {
+export default function HeroSection({ name, description, imgUrl ,scrollToContact }: { name: string, description: string, imgUrl: string ,scrollToContact : ()=>void;}) {
     return (
         <section className="w-full" >
             <div className="flex flex-col items-center md:flex-row justify-between w-full">
@@ -35,7 +35,7 @@ export default function HeroSection({ name, description, imgUrl }: { name: strin
                     <p className="text-[#ADB7BE] text-md lg:text-xl w-full md:w-3/4">{description}</p>
 
                     <div className="my-5 flex w-full flex-col gap-3 px-10 md:px-0 md:flex-row md:w-auto">
-                        <button className="px-6 py-3 rounded-full text-white cursor-pointer hover:bg-slate-20 bg-gradient-to-r from-purple-500  to-pink-500 text-xl lg:text-2xl">Contact Me</button>
+                        <button onClick={scrollToContact} className="px-6 py-3 rounded-full text-white cursor-pointer hover:bg-slate-20 bg-gradient-to-r from-purple-500  to-pink-500 text-xl lg:text-2xl">Contact Me</button>
                         <button className="p-1 rounded-full bg-transparent hover:bg-slate-800 cursor-pointer text-white  bg-gradient-to-r from-purple-500  to-pink-500">
                             <span className="bg-slate-950 w-full block h-full px-5 py-2 rounded-full text-xl lg:text-2xl">Download CV</span>
                         </button>

@@ -14,7 +14,8 @@ import Footer from "../components/Footer";
 export default function Home() {
   const heroRef = useRef<HTMLDivElement | null>(null);
   const aboutRef = useRef<HTMLDivElement | null>(null);
-  // const skillRef = useRef(null)
+  const projectRef = useRef<HTMLDivElement | null>(null);
+  const contactRef = useRef<HTMLDivElement | null>(null);
 
 
   return ( <>
@@ -23,11 +24,14 @@ export default function Home() {
         <Navbar
           scrollToHero={() => { heroRef.current?.scrollIntoView({ behavior: "smooth" }) }}
           scrollToAbout={() => { aboutRef.current?.scrollIntoView({ behavior: "smooth" }) }}
+          scrollToProject={() => { projectRef.current?.scrollIntoView({ behavior: "smooth" }) }}
+          scrollToContact={() => { contactRef.current?.scrollIntoView({ behavior: "smooth" }) }}
         />
       </div>
 
       <div ref={heroRef} className="pt-16 md:pt-25 w-full md:px-10">
         <HeroSection
+          scrollToContact={() => { contactRef.current?.scrollIntoView({ behavior: "smooth" }) }}
           name="pravin"
           description="Full-stack developer focused on building performant backend systems and modern UIs with React and Node.js. Passionate about solving real-world problems through code."
           imgUrl="https://img.freepik.com/free-psd/3d-nft-icon-developer-male-illustration_629802-6.jpg?semt=ais_hybrid&w=740"
@@ -45,12 +49,21 @@ I'm constantly exploring new technologies and improving my skills to deliver bet
         />
       </div>
         <SkillSection />
-        <ProjectSection />
+        <div ref={projectRef} className="scroll-mt-16">
+          <ProjectSection />
+        </div>
         <ExperienceSection />
-        <ContactSection />
+        <div ref={contactRef} className="scroll-mt-16">
+          <ContactSection />
+        </div>
 
     </main>
-        <Footer />
+        <Footer 
+        scrollToHero={() => { heroRef.current?.scrollIntoView({ behavior: "smooth" }) }}
+        scrollToAbout={() => { aboutRef.current?.scrollIntoView({ behavior: "smooth" }) }}
+        scrollToProject={() => { projectRef.current?.scrollIntoView({ behavior: "smooth" }) }}
+        scrollToContact={() => { contactRef.current?.scrollIntoView({ behavior: "smooth" }) }}
+        />
        </>
   );
 }

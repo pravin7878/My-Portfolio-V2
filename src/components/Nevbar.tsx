@@ -4,7 +4,7 @@ import { TbMenuDeep } from "react-icons/tb";
 import { IoClose } from "react-icons/io5";
 import NavLink from "./NevLink";
 import { useState } from "react";
-export default function Navbar({ scrollToHero, scrollToAbout }: { scrollToHero: () => void, scrollToAbout: () => void; }) {
+export default function Navbar({ scrollToHero, scrollToAbout ,scrollToProject,scrollToContact}: { scrollToHero: () => void, scrollToAbout: () => void,scrollToProject: () => void,scrollToContact: () => void; }) {
 
 const [isOpen, setIsOpen] = useState(false)
 
@@ -15,11 +15,11 @@ const [isOpen, setIsOpen] = useState(false)
         },
         {
             label: "Projects",
-            action: scrollToHero
+            action: scrollToProject
         },
         {
             label: "Contact",
-            action: scrollToHero
+            action: scrollToContact
         },
 
     ]
