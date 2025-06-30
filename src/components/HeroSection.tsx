@@ -2,9 +2,26 @@
 import React from "react"
 import Image from "next/image"
 import { TypeAnimation } from 'react-type-animation';
+import resume from "../../public/PravinKumar-full stack dev.pdf"
+const previewUrl = "https://drive.google.com/file/d/1bZveEVNFYG-EVuaQq3p_kecIXJnMzUab/preview";
+const downloadUrl = "https://drive.google.com/uc?export=download&id=1bZveEVNFYG-EVuaQq3p_kecIXJnMzUab";
+
+export default function HeroSection({ name, description, imgUrl, scrollToContact }: { name: string, description: string, imgUrl: string, scrollToContact: () => void; }) {
 
 
-export default function HeroSection({ name, description, imgUrl ,scrollToContact }: { name: string, description: string, imgUrl: string ,scrollToContact : ()=>void;}) {
+    function handleViewAndDownloadCV() {
+        // Open preview in new tab
+        window.open(previewUrl, "_blank", "noopener,noreferrer");
+        // Trigger download in background
+        const link = document.createElement("a");
+        link.href = downloadUrl;
+        link.setAttribute("download", "");
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+
     return (
         <section className="w-full" >
             <div className="flex flex-col items-center md:flex-row justify-between w-full">
@@ -35,9 +52,20 @@ export default function HeroSection({ name, description, imgUrl ,scrollToContact
                     <p className="text-[#ADB7BE] text-md lg:text-xl w-full md:w-3/4">{description}</p>
 
                     <div className="my-5 flex w-full flex-col gap-3 px-10 md:px-0 md:flex-row md:w-auto">
-                        <button onClick={scrollToContact} className="px-6 py-3 rounded-full text-white cursor-pointer hover:bg-slate-20 bg-gradient-to-r from-purple-500  to-pink-500 text-xl lg:text-2xl">Contact Me</button>
-                        <button className="p-1 rounded-full bg-transparent hover:bg-slate-800 cursor-pointer text-white  bg-gradient-to-r from-purple-500  to-pink-500">
-                            <span className="bg-slate-950 w-full block h-full px-5 py-2 rounded-full text-xl lg:text-2xl">Download CV</span>
+                        <button
+                            className="px-6 py-3 rounded-full text-white cursor-pointer hover:bg-slate-20 bg-gradient-to-r from-purple-500  to-pink-500 text-xl lg:text-2xl"
+                            onClick={scrollToContact}
+                        >
+                            Contact Me
+                        </button>
+                        <button
+                            type="button"
+                            onClick={handleViewAndDownloadCV}
+                            className="p-1 rounded-full bg-transparent hover:bg-slate-800 cursor-pointer text-white bg-gradient-to-r from-purple-500 to-pink-500"
+                        >
+                            <span className="bg-slate-950 w-full block h-full px-5 py-2 rounded-full text-xl lg:text-2xl">
+                                View/Download CV
+                            </span>
                         </button>
                     </div>
                 </div>
