@@ -71,14 +71,14 @@ const ContactSection = () => {
           I'm always open to connecting on all social media platforms!
           </p>
 
-          <a href="mailto:your.email@example.com" className="flex items-center gap-2 text-white hover:text-pink-400 transition">
-            <FaEnvelope className="text-xl" /> your.email@example.com
+          <a href="mailto:ravinmimrto648@gmail.com" className="flex items-center gap-2 text-white hover:text-pink-400 transition">
+            <FaEnvelope className="text-xl" /> pravinmimrto648@gmail.com
           </a>
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-pink-400 transition">
-            <FaGithub className="text-xl" /> github.com/yourusername
+          <a href="https://github.com/pravin7878" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-pink-400 transition">
+            <FaGithub className="text-xl" /> https://github.com/pravin7878
           </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-pink-400 transition">
-            <FaLinkedin className="text-xl" /> linkedin.com/in/yourusername
+          <a href="https://www.linkedin.com/in/pravin-kumar24/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-pink-400 transition">
+            <FaLinkedin className="text-xl" /> https://www.linkedin.com/in/pravin-kumar24/
           </a>
           {/* Add more social media links as needed */}
         </div>
